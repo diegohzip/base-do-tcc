@@ -4,9 +4,9 @@ USE CRUD;
 
 CREATE TABLE usuarios (
     id INT AUTO_INCREMENT PRIMARY KEY,
-    username VARCHAR(255) NOT NULL,
+    usuarioname VARCHAR(255) NOT NULL,
     password VARCHAR(255) NOT NULL,
-    role ENUM('admin', 'user') NOT NULL
+    role ENUM('admin', 'usuario') NOT NULL
 );
 
 CREATE TABLE categorias (
@@ -23,4 +23,12 @@ CREATE TABLE produtos (
     quantidade INT NOT NULL,
     categoria INT NOT NULL,
     FOREIGN KEY (categoria) REFERENCES categorias(id)
+);
+
+CREATE TABLE timaos (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(255) NOT NULL DEFAULT 'Sem Nome',
+    fundacao DATE NOT NULL DEFAULT '2000-01-01',
+    jogadores VARCHAR(500) NOT NULL DEFAULT 'alisson',
+    cidade VARCHAR(255) NOT NULL DEFAULT 'São Paulo'
 );
